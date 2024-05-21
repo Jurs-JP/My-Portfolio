@@ -73,14 +73,11 @@ window.addEventListener('scroll', () => {
     currentPos = window.scrollY //- scroll position Y
 
 
-    if ((middleScreen >= pos1.y) && (middleScreen <= pos4.y + pos4.height)) {
+    if((middleScreen >= window.innerHeight) && (middleScreen <= window.innerHeight + ((window.innerHeight*0.8)*4))){
         sticky_number.style.transform = "translateX(00%)";
         sticky_number.style.opacity = "1";
         sticky_info.style.transform = "translateX(00%)";
         sticky_info.style.opacity = "1";
-        
-       
-        
     } else {
         sticky_number.style.transform = "translateX(-100%)";
         sticky_number.style.opacity = "0";
@@ -88,48 +85,38 @@ window.addEventListener('scroll', () => {
         sticky_info.style.opacity = "0";
 
     }
-    
-    if ((middleScreen >= pos1.y) && (middleScreen <= pos4.y + pos4.height)){
-        body.style.backgroundColor = `rgb(255,255,255)`;
-       
-    }
-    else {
-        body.style.backgroundColor = `rgb(255,255,255)`;
-    }
 
 
-    if ((middleScreen >= pos1.y) && (middleScreen <= pos1.bottom)) {
-        console.log("middle of content 1")
+    console.log(window.scrollY)
+
+    if((middleScreen >= window.innerHeight) && (middleScreen <= window.innerHeight + ((window.innerHeight*0.8)*1))){
+        console.log("mid of 1")
 
         contentNumber.textContent = `${contentInfoArray[0].number}`
         contentTitle.textContent = `${contentInfoArray[0].title}`
         contentInfo.textContent = `${contentInfoArray[0].info}`
     }
-    else if ((middleScreen >= pos2.y) && (middleScreen <= pos2.bottom)) {
-        console.log("middle of content 2")
+    if((middleScreen >= window.innerHeight + ((window.innerHeight*0.8)*1)) && (middleScreen <= window.innerHeight + ((window.innerHeight*0.8)*2))){
+        console.log("mid of 2")
 
         contentNumber.textContent = `${contentInfoArray[1].number}`
         contentTitle.textContent = `${contentInfoArray[1].title}`
         contentInfo.textContent = `${contentInfoArray[1].info}`
     }
-    else if ((middleScreen >= pos3.y) && (middleScreen <= pos3.bottom)) {
-        console.log("middle of content 3")
+    if((middleScreen >= window.innerHeight + ((window.innerHeight*0.8)*2)) && (middleScreen <= window.innerHeight + ((window.innerHeight*0.8)*3))){
+        console.log("mid of 3")
 
         contentNumber.textContent = `${contentInfoArray[2].number}`
         contentTitle.textContent = `${contentInfoArray[2].title}`
         contentInfo.textContent = `${contentInfoArray[2].info}`
     }
-
-    else if ((middleScreen >= pos4.y) && (middleScreen <= pos4.bottom)) {
-        console.log("middle of content 4")
+    if((middleScreen >= window.innerHeight + ((window.innerHeight*0.8)*3)) && (middleScreen <= window.innerHeight + ((window.innerHeight*0.8)*4))){
+        console.log("mid of 4")
 
         contentNumber.textContent = `${contentInfoArray[3].number}`
         contentTitle.textContent = `${contentInfoArray[3].title}`
         contentInfo.textContent = `${contentInfoArray[3].info}`
     }
-
-
-
 
 
 }); //////////////////////////-END-///////////////////////////
@@ -148,10 +135,10 @@ const my_title = document.querySelector(".my_title");
 my_name.style.transform = "translate(0%)"
 my_title.style.transform = "translate(0%)"
 
-setInterval(()=> {
-    console.log("Loaded")
-    setTimeout(()=> {
-        console.log("Loaded 2")
-    }, 3000)
-}, 3000)
+// setInterval(()=> {
+//     console.log("Loaded")
+//     setTimeout(()=> {
+//         console.log("Loaded 2")
+//     }, 3000)
+// }, 3000)
 
